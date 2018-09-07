@@ -12,9 +12,12 @@
 		117B8B472142A94B009B832D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117B8B452142A94B009B832D /* Main.storyboard */; };
 		117B8B492142A94D009B832D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 117B8B482142A94D009B832D /* Assets.xcassets */; };
 		117B8B4C2142A94D009B832D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 117B8B4A2142A94D009B832D /* LaunchScreen.storyboard */; };
+		117B8B542142B458009B832D /* JGModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B8B532142B458009B832D /* JGModel.swift */; };
+		5214602FA33E8AD308690FA7 /* Pods_JokeGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6CAD5F7BCAD74531F6DE48 /* Pods_JokeGenerator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0255D7C9827E618BF15218AC /* Pods-JokeGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JokeGenerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-JokeGenerator/Pods-JokeGenerator.release.xcconfig"; sourceTree = "<group>"; };
 		117B8B3E2142A94B009B832D /* JokeGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokeGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		117B8B412142A94B009B832D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		117B8B432142A94B009B832D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		117B8B482142A94D009B832D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		117B8B4B2142A94D009B832D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		117B8B4D2142A94D009B832D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		117B8B532142B458009B832D /* JGModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGModel.swift; sourceTree = "<group>"; };
+		3A6CAD5F7BCAD74531F6DE48 /* Pods_JokeGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JokeGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C92672D1A30AC05A3B7380E /* Pods-JokeGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JokeGenerator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JokeGenerator/Pods-JokeGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5214602FA33E8AD308690FA7 /* Pods_JokeGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				117B8B402142A94B009B832D /* JokeGenerator */,
 				117B8B3F2142A94B009B832D /* Products */,
+				DEDFFC78558AA4F1418D7838 /* Pods */,
+				DB889BF0DD7A9B74126DAF62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +65,30 @@
 			children = (
 				117B8B412142A94B009B832D /* AppDelegate.swift */,
 				117B8B432142A94B009B832D /* ViewController.swift */,
+				117B8B532142B458009B832D /* JGModel.swift */,
 				117B8B452142A94B009B832D /* Main.storyboard */,
 				117B8B482142A94D009B832D /* Assets.xcassets */,
 				117B8B4A2142A94D009B832D /* LaunchScreen.storyboard */,
 				117B8B4D2142A94D009B832D /* Info.plist */,
 			);
 			path = JokeGenerator;
+			sourceTree = "<group>";
+		};
+		DB889BF0DD7A9B74126DAF62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A6CAD5F7BCAD74531F6DE48 /* Pods_JokeGenerator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEDFFC78558AA4F1418D7838 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C92672D1A30AC05A3B7380E /* Pods-JokeGenerator.debug.xcconfig */,
+				0255D7C9827E618BF15218AC /* Pods-JokeGenerator.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 117B8B502142A94D009B832D /* Build configuration list for PBXNativeTarget "JokeGenerator" */;
 			buildPhases = (
+				218DD0D49450236EE83A8BD8 /* [CP] Check Pods Manifest.lock */,
 				117B8B3A2142A94B009B832D /* Sources */,
 				117B8B3B2142A94B009B832D /* Frameworks */,
 				117B8B3C2142A94B009B832D /* Resources */,
+				3CC616138D2DA81761A17621 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +159,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		218DD0D49450236EE83A8BD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JokeGenerator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CC616138D2DA81761A17621 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JokeGenerator/Pods-JokeGenerator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JokeGenerator/Pods-JokeGenerator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		117B8B3A2142A94B009B832D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				117B8B442142A94B009B832D /* ViewController.swift in Sources */,
+				117B8B542142B458009B832D /* JGModel.swift in Sources */,
 				117B8B422142A94B009B832D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +347,7 @@
 		};
 		117B8B512142A94D009B832D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C92672D1A30AC05A3B7380E /* Pods-JokeGenerator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +366,7 @@
 		};
 		117B8B522142A94D009B832D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0255D7C9827E618BF15218AC /* Pods-JokeGenerator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
