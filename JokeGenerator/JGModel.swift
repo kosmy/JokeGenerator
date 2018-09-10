@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class JGModel: NSObject {
    
@@ -18,7 +19,9 @@ class JGModel: NSObject {
             .validate(statusCode: 200..<300)
             .responseJSON { response in
                 if (response.result.error == nil) {
-                    debugPrint("HTTP Response Body: \(response.data)")
+                    //debugPrint("HTTP Response Body: \(response.data)")
+                    let str = NSString.init(data: response.data!, encoding: String.Encoding.utf8.rawValue)
+                    print(str)
                 }
                 else {
                     debugPrint("HTTP Request failed: \(response.result.error)")

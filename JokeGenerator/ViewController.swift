@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  
+    @IBOutlet weak var headerLabel: UILabel!
+    
 
-
+    @IBAction func getJoke() {
+        JGModel.getRandomJoke()
+    }
+    
 }
 
