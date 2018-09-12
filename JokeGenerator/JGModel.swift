@@ -14,6 +14,7 @@ class JGModel: NSObject {
     
    
     static let jokeReceivedNotification = "jokeReceivedNotification"
+    static let kJokeText = "jokeText"
     
     static func getRandomJoke() {
         
@@ -28,8 +29,8 @@ class JGModel: NSObject {
                     do {
                         let json =  try JSON(data: response.data!)
                     let joke = json ["value"]["joke"].string
-                    print(joke!)
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: jokeReceivedNotification), object: self, userInfo: nil)
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: jokeReceivedNotification), object: self, userInfo: [kJokeText: joke])
+                        
                     }
                     catch {
                         print(error)
@@ -40,6 +41,8 @@ class JGModel: NSObject {
                 }
         }
     }
+    
+    
     
     
 

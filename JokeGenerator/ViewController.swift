@@ -12,12 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var headerLabel: UILabel!
     
-
-    @IBAction func getJoke() {
-        JGModel.getRandomJoke()
-    }
-    
-    
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -29,14 +24,21 @@ class ViewController: UIViewController {
         
         unsubscribeNotifications()
     }
+    @IBAction func getJoke() {
+        JGModel.getRandomJoke()
+        
+        UIView.animate(withDuration: 1) {
+            
+        }
+    }
     
     func subscribeNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(displayJoke(notification:)), name: NSNotification.Name(rawValue: JGModel.jokeReceivedNotification), object: nil)
     }
     
    @objc func displayJoke(notification: Notification) {
-    print(#function)
-    headerLabel.text = Date().description
+    print(notification.userInfo)
+    headerLabel.text = notification.userInfo?[JGModel.kJokeText] as? String
     }
     
     func unsubscribeNotifications() {
