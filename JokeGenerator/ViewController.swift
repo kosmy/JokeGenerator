@@ -17,5 +17,30 @@ class ViewController: UIViewController {
         JGModel.getRandomJoke()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        subscribeNotifications()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        unsubscribeNotifications()
+    }
+    
+    func subscribeNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(displayJoke(notification:)), name: NSNotification.Name(rawValue: JGModel.jokeReceivedNotification), object: nil)
+    }
+    
+   @objc func displayJoke(notification: Notification) {
+    print(#function)
+    headerLabel.text = Date().description
+    }
+    
+    func unsubscribeNotifications() {
+         NotificationCenter.default.removeObserver(self)
+    }
 }
 

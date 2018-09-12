@@ -11,7 +11,10 @@ import Alamofire
 import SwiftyJSON
 
 class JGModel: NSObject {
+    
    
+    static let jokeReceivedNotification = "jokeReceivedNotification"
+    
     static func getRandomJoke() {
         
         // Fetch Request
@@ -20,8 +23,17 @@ class JGModel: NSObject {
             .responseJSON { response in
                 if (response.result.error == nil) {
                     //debugPrint("HTTP Response Body: \(response.data)")
-                    let str = NSString.init(data: response.data!, encoding: String.Encoding.utf8.rawValue)
-                    print(str)
+                    //let str = NSString.init(data: response.data!, encoding: String.Encoding.utf8.rawValue)
+                    //print(str)
+                    do {
+                        let json =  try JSON(data: response.data!)
+                    let joke = json ["value"]["joke"].string
+                    print(joke!)
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: jokeReceivedNotification), object: self, userInfo: nil)
+                    }
+                    catch {
+                        print(error)
+                    }
                 }
                 else {
                     debugPrint("HTTP Request failed: \(response.result.error)")
